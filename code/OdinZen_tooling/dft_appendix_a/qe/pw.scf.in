@@ -1,0 +1,21 @@
+&control
+  calculation = 'scf'
+  prefix = 'cuzr'
+  pseudo_dir = './pseudo'
+  outdir = './tmp'
+  tprnfor = .true. , tstress = .true.
+/
+&system
+  ibrav = 0
+  nat = NAT , ntyp = 2
+  ecutwfc = 50 , ecutrho = 400
+  occupations = 'smearing' , smearing = 'mp' , degauss = 0.01
+/
+&electrons
+  conv_thr = 1.0d-8
+  mixing_beta = 0.3
+/
+ATOMIC_SPECIES
+  Cu 63.546 Cu.pbe-dn-kjpaw_psl.1.0.0.UPF
+  Zr 91.224 Zr.pbe-spn-kjpaw_psl.1.0.0.UPF
+! paste CELL_PARAMETERS, ATOMIC_POSITIONS, K_POINTS from the structure

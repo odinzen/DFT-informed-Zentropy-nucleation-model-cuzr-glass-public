@@ -1,0 +1,19 @@
+TEST FIXTURES IN THIS DIRECTORY  (read before trusting any number here)
+=======================================================================
+
+The following two files are SYNTHETIC TEST FIXTURES, not density functional theory
+results. They exist only so the toolchain (fit_eos_debye.py and zentropy_handoff.py)
+can be exercised end to end without a DFT engine installed. No production DFT was run
+to produce them.
+
+  ev_test.dat            A synthetic energy vs volume parabola centred on
+                         (V0 = 15.0 A^3/atom, E0 = -5.0 eV/atom). Not a real E-V scan.
+
+  results_Cu8Zr5.json    The fit of ev_test.dat (E0_eV = -5, V0_A3 = 15 exactly).
+                         Carries a "_WARNING" key restating this. Not a real cluster energy.
+
+To produce real inputs, follow README.md (Order of work): relax the real structures,
+scan volumes, write your own ev_<name>.dat, run fit_eos_debye.py, then zentropy_handoff.py.
+Overwrite results_Cu8Zr5.json with the real fit before substituting dE_ico into
+zentropy_driving_force.py. Until then the prediction uses the liquidus calibration,
+not a first principles cluster energy.

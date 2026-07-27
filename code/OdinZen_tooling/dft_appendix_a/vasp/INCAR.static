@@ -1,0 +1,9 @@
+SYSTEM = Cu Zr static
+ISTART = 0 ; ICHARG = 2
+ENCUT  = 400
+PREC   = Accurate
+EDIFF  = 1E-7
+IBRION = -1 ; NSW = 0
+ISMEAR = -5
+LREAL  = .FALSE.
+GGA    = PE

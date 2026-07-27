@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="545" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#2b2b2b">Sensitivity of predicted critical diameter</text>
+  <text x="545" y="48" text-anchor="middle" font-size="12" fill="#2b2b2b">Cu47Zr45Al8, each input varied &#177;20 percent</text>
+
+  <!-- plot frame -->
+  <rect x="230" y="60" width="630" height="430" fill="none" stroke="#2b2b2b" stroke-width="1.2"/>
+
+  <!-- log gridlines at 1, 10, 100 -->
+  <line x1="327.8" y1="60" x2="327.8" y2="490" stroke="#cfcfcf" stroke-width="1"/>
+  <line x1="514.8" y1="60" x2="514.8" y2="490" stroke="#cfcfcf" stroke-width="1"/>
+  <line x1="701.8" y1="60" x2="701.8" y2="490" stroke="#cfcfcf" stroke-width="1"/>
+  <text x="327.8" y="506" text-anchor="middle" font-size="11" fill="#6e6e6e">1</text>
+  <text x="514.8" y="506" text-anchor="middle" font-size="11" fill="#6e6e6e">10</text>
+  <text x="701.8" y="506" text-anchor="middle" font-size="11" fill="#6e6e6e">100</text>
+
+  <!-- measurement band (factor of three around 15 mm: 5 to 45) -->
+  <rect x="458.6" y="60" width="178.4" height="430" fill="#a9a9a9" fill-opacity="0.16"/>
+
+  <!-- measured 15 mm line -->
+  <line x1="547.8" y1="60" x2="547.8" y2="490" stroke="#6e6e6e" stroke-width="1.1" stroke-dasharray="2,3"/>
+  <text x="551" y="486" font-size="10" fill="#6e6e6e">measured 15 mm</text>
+
+  <!-- baseline 11.88 mm line -->
+  <line x1="528.9" y1="60" x2="528.9" y2="490" stroke="#2b2b2b" stroke-width="1.3" stroke-dasharray="5,3"/>
+  <text x="525" y="486" text-anchor="end" font-size="10" fill="#2b2b2b">baseline 11.9 mm</text>
+
+  <!-- ===================== BARS ===================== -->
+  <!-- helper styling: fill #d9d9d9, edge #2b2b2b; endpoint ticks dark -->
+  <!-- i0 aT -->
+  <rect x="276.2" y="69.5" width="563.3" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <line x1="276.2" y1="69.5" x2="276.2" y2="93.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <line x1="839.5" y1="69.5" x2="839.5" y2="93.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <text x="272" y="85" text-anchor="end" font-size="10" fill="#2b2b2b">0.53</text>
+  <text x="836" y="85" text-anchor="end" font-size="10" fill="#2b2b2b" font-weight="bold">544</text>
+
+  <!-- i1 soft2 -->
+  <rect x="434.3" y="112.5" width="236.4" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <line x1="434.3" y1="112.5" x2="434.3" y2="136.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <line x1="670.7" y1="112.5" x2="670.7" y2="136.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <text x="430" y="128" text-anchor="end" font-size="10" fill="#2b2b2b">3.7</text>
+  <text x="675" y="128" font-size="10" fill="#2b2b2b">68</text>
+
+  <!-- i2 soft1 -->
+  <rect x="453.9" y="155.5" width="195.8" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <line x1="453.9" y1="155.5" x2="453.9" y2="179.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <line x1="649.7" y1="155.5" x2="649.7" y2="179.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <text x="449" y="171" text-anchor="end" font-size="10" fill="#2b2b2b">4.7</text>
+  <text x="654" y="171" font-size="10" fill="#2b2b2b">53</text>
+
+  <!-- i3 D* -->
+  <rect x="473.4" y="198.5" width="96.4" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <line x1="473.4" y1="198.5" x2="473.4" y2="222.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <line x1="569.8" y1="198.5" x2="569.8" y2="222.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <text x="469" y="214" text-anchor="end" font-size="10" fill="#2b2b2b">6.0</text>
+  <text x="574" y="214" font-size="10" fill="#2b2b2b">20</text>
+
+  <!-- i4 lambda -->
+  <rect x="508.5" y="241.5" width="37.1" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <line x1="508.5" y1="241.5" x2="508.5" y2="265.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <line x1="545.6" y1="241.5" x2="545.6" y2="265.5" stroke="#2b2b2b" stroke-width="1.4"/>
+  <text x="504" y="257" text-anchor="end" font-size="10" fill="#2b2b2b">9.2</text>
+  <text x="566" y="257" font-size="10" fill="#2b2b2b">14.6</text>
+
+  <!-- i5 eta0 -->
+  <rect x="524.0" y="284.5" width="8.9" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <text x="556" y="300" font-size="9.5" fill="#2b2b2b">11.2 / 12.5</text>
+
+  <!-- i6 x -->
+  <rect x="526.6" y="327.5" width="4.2" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <text x="556" y="343" font-size="9.5" fill="#2b2b2b">11.6 / 12.2</text>
+
+  <!-- i7 Vm -->
+  <rect x="526.6" y="370.5" width="4.2" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <text x="556" y="386" font-size="9.5" fill="#2b2b2b">11.6 / 12.2</text>
+
+  <!-- i8 dE -->
+  <rect x="527.4" y="413.5" width="2.6" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <text x="556" y="429" font-size="9.5" fill="#2b2b2b">11.7 / 12.0</text>
+
+  <!-- i9 B0 -->
+  <rect x="528.0" y="456.5" width="1.8" height="24" fill="#d9d9d9" stroke="#2b2b2b" stroke-width="1"/>
+  <text x="556" y="472" font-size="9.5" fill="#6e6e6e">11.88 (DFT, negligible)</text>
+
+  <!-- ===================== ROW LABELS ===================== -->
+  <text x="222" y="85"  text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">&#945;T</tspan>  Turnbull coefficient</text>
+  <text x="222" y="128" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">soft2</tspan>  softening factor</text>
+  <text x="222" y="171" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">soft1</tspan>  softening factor</text>
+  <text x="222" y="214" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">D*</tspan>  fragility</text>
+  <text x="222" y="257" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">&#955;</tspan>  jump distance</text>
+  <text x="222" y="300" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">&#951;0</tspan>  viscosity prefactor</text>
+  <text x="222" y="343" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">x</tspan>  detectable fraction</text>
+  <text x="222" y="386" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">Vm</tspan>  molar volume</text>
+  <text x="222" y="429" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">&#948;E</tspan>  configuration split</text>
+  <text x="222" y="472" text-anchor="end" font-size="12" fill="#2b2b2b"><tspan font-weight="bold">B0</tspan>  bulk modulus (DFT)</text>
+
+  <!-- ===================== AXIS + FOOTNOTE ===================== -->
+  <text x="545" y="528" text-anchor="middle" font-size="12" fill="#2b2b2b">Predicted critical diameter, mm (log scale)</text>
+  <text x="545" y="544" text-anchor="middle" font-size="9.5" fill="#6e6e6e">Bars span the diameter as each input varies &#177;20 percent; ticks mark the extremes. Shaded band: measurement within a factor of three.</text>
+  <text x="545" y="556" text-anchor="middle" font-size="9.5" fill="#6e6e6e">The two declared softening factors (soft1, soft2) rank second and third, ahead of the measured fragility.</text>
+</svg>

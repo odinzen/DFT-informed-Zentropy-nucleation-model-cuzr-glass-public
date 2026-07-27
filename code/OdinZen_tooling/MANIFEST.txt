@@ -1,0 +1,18 @@
+The Odinzen engine — supplementary code and data
+=================================================
+Manuscript: A transparent, liquidus calibrated, Zentropy-style two configuration model for
+            glass forming ability: the Odinzen engine demonstrated on Cu Zr and Zr Cu Al alloys
+
+Contents
+  zentropy_driving_force.py  Debye Grueneisen crystalline free energy from DFT bulk
+                             moduli; two configuration Zentropy supercooled liquid;
+                             driving force calibrated to the liquidus.
+  nucleation_zentropy.py     Classical nucleation model; locates the TTT nose;
+                             critical cooling rate and casting diameter; figures.
+  sensitivity.py             Sensitivity of the prediction to each input (Fig S1).
+  dft_appendix_a/            Structures, VASP and Quantum ESPRESSO inputs, equation of
+                             state and Debye fitter, and the Zentropy handoff script.
+
+Requirements: python 3, numpy, scipy, matplotlib. No production DFT or molecular
+dynamics is needed at the point of prediction. The package in dft_appendix_a computes
+the one remaining first principles input on the user's own machine.

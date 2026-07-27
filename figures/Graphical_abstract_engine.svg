@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1328 560" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="ga" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2b2b2b"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1328" height="560" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="664" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="#2b2b2b">A transparent, liquidus calibrated Zentropy nucleation engine for glass forming ability</text>
+
+  <!-- ================= INPUTS ================= -->
+  <text x="197" y="92" text-anchor="middle" font-size="16" font-weight="bold" fill="#2b2b2b">Inputs, typed by origin</text>
+  <rect x="42" y="108" width="310" height="58" rx="8" fill="#6e6e6e" stroke="#4f4f4f" stroke-width="1.1"/>
+  <text x="197" y="143" text-anchor="middle" font-size="15" fill="#ffffff"><tspan font-weight="bold">Measured</tspan>  Tg, Tl, D*</text>
+  <rect x="42" y="176" width="310" height="58" rx="8" fill="#a9a9a9" stroke="#7d7d7d" stroke-width="1.1"/>
+  <text x="197" y="211" text-anchor="middle" font-size="15" fill="#1f1f1f"><tspan font-weight="bold">Published DFT</tspan>  B0, Hf</text>
+  <rect x="42" y="244" width="310" height="58" rx="8" fill="#e8e8e8" stroke="#b3b3b3" stroke-width="1.1"/>
+  <text x="197" y="279" text-anchor="middle" font-size="15" fill="#2b2b2b"><tspan font-weight="bold">Declared model</tspan>  soft1, soft2, &#948;E</text>
+  <rect x="42" y="312" width="310" height="58" rx="8" fill="#e8e8e8" stroke="#b3b3b3" stroke-width="1.1"/>
+  <text x="197" y="347" text-anchor="middle" font-size="15" fill="#2b2b2b"><tspan font-weight="bold">Standard</tspan>  &#955;, &#951;0, x</text>
+
+  <!-- arrow inputs -> engine -->
+  <line x1="356" y1="239" x2="396" y2="262" stroke="#2b2b2b" stroke-width="2.2" marker-end="url(#ga)"/>
+
+  <!-- ================= ENGINE ================= -->
+  <rect x="400" y="158" width="412" height="244" rx="14" fill="#f3f3f3" stroke="#2b2b2b" stroke-width="2.4"/>
+  <text x="606" y="214" text-anchor="middle" font-size="25" font-weight="bold" fill="#2b2b2b">THE ODINZEN ENGINE</text>
+  <text x="606" y="248" text-anchor="middle" font-size="16" fill="#2b2b2b">Zentropy free energy  +  classical nucleation</text>
+  <line x1="440" y1="268" x2="772" y2="268" stroke="#a9a9a9" stroke-width="1"/>
+  <text x="606" y="296" text-anchor="middle" font-size="14.5" fill="#2b2b2b">every input typed by origin</text>
+  <text x="606" y="320" text-anchor="middle" font-size="14.5" fill="#2b2b2b">one liquidus calibration</text>
+  <text x="606" y="344" text-anchor="middle" font-size="14.5" fill="#2b2b2b">nothing tuned to the casting data</text>
+  <text x="606" y="378" text-anchor="middle" font-size="14.5" font-style="italic" fill="#6e6e6e">&#8594; TTT, critical cooling rate, casting diameter</text>
+
+  <!-- arrow engine -> plot -->
+  <line x1="812" y1="280" x2="898" y2="300" stroke="#2b2b2b" stroke-width="2.2" marker-end="url(#ga)"/>
+
+  <!-- ================= PREDICTED vs MEASURED PLOT ================= -->
+  <text x="1065" y="138" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b2b2b">predicted vs measured</text>
+  <!-- factor-of-three band -->
+  <polygon points="905,470 1225,363.3 1225,150 1011.7,150" fill="#a9a9a9" fill-opacity="0.16"/>
+  <!-- plot frame -->
+  <rect x="905" y="150" width="320" height="320" fill="none" stroke="#2b2b2b" stroke-width="1.3"/>
+  <!-- diagonal y=x -->
+  <line x1="905" y1="470" x2="1225" y2="150" stroke="#6e6e6e" stroke-width="1.3" stroke-dasharray="6,4"/>
+  <text x="1180" y="186" font-size="13" fill="#6e6e6e" font-style="italic">y = x</text>
+  <text x="1150" y="250" font-size="12" fill="#6e6e6e">within &#215;3</text>
+  <!-- ticks -->
+  <text x="905" y="492" text-anchor="middle" font-size="12" fill="#6e6e6e">0</text>
+  <text x="1005" y="492" text-anchor="middle" font-size="12" fill="#6e6e6e">5</text>
+  <text x="1105" y="492" text-anchor="middle" font-size="12" fill="#6e6e6e">10</text>
+  <text x="1205" y="492" text-anchor="middle" font-size="12" fill="#6e6e6e">15</text>
+  <text x="896" y="474" text-anchor="end" font-size="12" fill="#6e6e6e">0</text>
+  <text x="896" y="374" text-anchor="end" font-size="12" fill="#6e6e6e">5</text>
+  <text x="896" y="274" text-anchor="end" font-size="12" fill="#6e6e6e">10</text>
+  <text x="896" y="174" text-anchor="end" font-size="12" fill="#6e6e6e">15</text>
+  <!-- axis labels -->
+  <text x="1065" y="514" text-anchor="middle" font-size="14" fill="#2b2b2b">measured dc (mm)</text>
+  <text x="862" y="310" text-anchor="middle" font-size="14" fill="#2b2b2b" transform="rotate(-90 862 310)">predicted dc (mm)</text>
+
+  <!-- data points -->
+  <!-- Cu47Zr45Al8 (15, 11.9) on diagonal -->
+  <circle cx="1205" cy="232" r="6.5" fill="#2b2b2b"/>
+  <text x="1196" y="224" text-anchor="end" font-size="12.5" fill="#2b2b2b">Cu47Zr45Al8  11.9 / 15</text>
+  <!-- Cu50Zr50 (2, 0.95) on diagonal -->
+  <circle cx="945" cy="451" r="6.5" fill="#2b2b2b"/>
+  <text x="957" y="455" font-size="12.5" fill="#2b2b2b">Cu50Zr50  0.95 / 2</text>
+  <!-- Cu64Zr36 (2, 7.3) overpredicted, open square -->
+  <rect x="939" y="318" width="12" height="12" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.8"/>
+  <text x="959" y="324" font-size="12.5" fill="#2b2b2b">Cu64Zr36  overpredicted</text>
+
+  <!-- ================= BOTTOM MESSAGE ================= -->
+  <line x1="42" y1="506" x2="812" y2="506" stroke="#cfcfcf" stroke-width="1"/>
+  <text x="42" y="530" font-size="14.5" fill="#2b2b2b">Predicted critical casting diameter 11.9 mm vs 15 mm measured (Cu47Zr45Al8);</text>
+  <text x="42" y="550" font-size="14.5" fill="#2b2b2b">no parameter tuned to the casting data, and the engine ships as a runnable package.</text>
+</svg>

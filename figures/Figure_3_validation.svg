@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 540" font-family="DejaVu Sans, Arial, Helvetica, sans-serif">
+  <defs>
+    <clipPath id="plot"><rect x="120" y="110" width="360" height="360"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="560" height="540" fill="#ffffff"/>
+
+  <text x="300" y="40" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b2b2b">Predicted vs measured critical casting diameter</text>
+
+  <!-- factor-of-three band (parallel to diagonal, +/- on log axes), clipped to plot -->
+  <g clip-path="url(#plot)">
+    <polygon points="120,362.8 480,2.8 480,217 120,577" fill="#a9a9a9" fill-opacity="0.16"/>
+    <line x1="120" y1="362.8" x2="480" y2="2.8" stroke="#a9a9a9" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="120" y1="577" x2="480" y2="217" stroke="#a9a9a9" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- gridlines at 1 and 10 -->
+  <line x1="187.7" y1="110" x2="187.7" y2="470" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="412.4" y1="110" x2="412.4" y2="470" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="120" y1="402.3" x2="480" y2="402.3" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="120" y1="177.6" x2="480" y2="177.6" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- diagonal y = x -->
+  <line x1="120" y1="470" x2="480" y2="110" stroke="#6e6e6e" stroke-width="1.3" stroke-dasharray="6,4"/>
+  <text x="455" y="128" font-size="12" font-style="italic" fill="#6e6e6e">y = x</text>
+
+  <!-- plot frame -->
+  <rect x="120" y="110" width="360" height="360" fill="none" stroke="#2b2b2b" stroke-width="1.3"/>
+
+  <!-- axis tick labels (log: 1, 10) -->
+  <text x="187.7" y="488" text-anchor="middle" font-size="12" fill="#6e6e6e">1</text>
+  <text x="412.4" y="488" text-anchor="middle" font-size="12" fill="#6e6e6e">10</text>
+  <text x="112" y="406" text-anchor="end" font-size="12" fill="#6e6e6e">1</text>
+  <text x="112" y="181" text-anchor="end" font-size="12" fill="#6e6e6e">10</text>
+
+  <!-- axis labels -->
+  <text x="300" y="514" text-anchor="middle" font-size="13" fill="#2b2b2b">measured critical diameter, mm (log scale)</text>
+  <text x="74" y="290" text-anchor="middle" font-size="13" fill="#2b2b2b" transform="rotate(-90 74 290)">predicted critical diameter, mm (log scale)</text>
+
+  <!-- data points -->
+  <!-- Cu50Zr50 (2, 0.95) filled, in band -->
+  <circle cx="255.3" cy="407.3" r="6.5" fill="#2b2b2b"/>
+  <text x="266" y="411" font-size="12" fill="#2b2b2b">Cu50Zr50</text>
+  <!-- Cu47Zr45Al8 (15, 11.9) filled, in band -->
+  <circle cx="451.9" cy="160.7" r="6.5" fill="#2b2b2b"/>
+  <text x="443" y="153" text-anchor="end" font-size="12" fill="#2b2b2b">Cu47Zr45Al8</text>
+  <!-- Cu64Zr36 (2, 7.3) open square, above band (overpredicted ~4x) -->
+  <rect x="249.3" y="202.4" width="12" height="12" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.8"/>
+  <text x="270" y="208" font-size="12" fill="#2b2b2b">Cu64Zr36 (overpredicted ~4&#215;)</text>
+
+  <!-- footnote -->
+  <text x="300" y="534" text-anchor="middle" font-size="9.5" fill="#6e6e6e">Filled circles: thermodynamics and kinetics align, within the factor-of-three band. Open square: documented decoupling.</text>
+</svg>
