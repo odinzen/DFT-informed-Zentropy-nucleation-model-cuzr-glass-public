@@ -22,6 +22,9 @@ are under CC BY 4.0, see `LICENSE-DATA`. Cite the paper if you use either.
   - `dft_appendix_a/` - structures, VASP and Quantum ESPRESSO inputs, a Birch-Murnaghan
     equation-of-state and Debye fitter, and the handoff script for the one first-principles
     input the model otherwise takes from the literature
+  - `config2/` - the config-2 free-energy campaign that computes the second configuration's
+    softening (soft2) and energy split from a classical-potential melt-quench and phonon
+    density of states; the licensed EAM potential is not redistributed (see config2/README.md)
   - `MANIFEST.txt` - description of each file
 - `figures/` - the figures and graphical abstract
 

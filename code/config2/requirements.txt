@@ -1,0 +1,7 @@
+# Pip fallback if conda is not available: pip install -r requirements.txt
+# (The campaign runs on ase's EAM even without matscipy, just ~9x slower; matscipy is
+#  strongly preferred for the ~2-3 h runtime.)
+numpy
+scipy
+ase
+matscipy

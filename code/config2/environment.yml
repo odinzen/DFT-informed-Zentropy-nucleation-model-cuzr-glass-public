@@ -1,0 +1,18 @@
+# Conda environment for the config-2 free-energy campaign.
+# This campaign uses a CLASSICAL EAM potential (via matscipy), so it needs NO MLIP,
+# no PyTorch, and no GPU. Create with:  conda env create -f environment.yml
+# then:  conda activate config2
+name: config2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - ase
+  - matscipy
+# Optional, only if you also want to run the MACE melt-quench ensemble on this machine
+# (not needed for config2_campaign.py):
+#   - pip
+#   - pip:
+#       - mace-torch
