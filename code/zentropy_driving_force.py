@@ -76,7 +76,7 @@ def crystalline_assembly(xZr, lo, hi):
 def G_crystal(T, E0, thetaD):
     return E0 + Fvib_molar(T, thetaD)
 
-def G_liquid(T, E0_cryst, thetaD_cryst, dE_ico, dE_split, soft1=0.85, soft2=0.80):
+def G_liquid(T, E0_cryst, thetaD_cryst, dE_ico, dE_split, soft1=0.80, soft2=0.80):
     """Two configuration Zentropy supercooled liquid.
     config 1 (icosahedral ground liquid): E0_cryst + dE_ico, theta = soft1*theta_cryst
     config 2 (defective looser):          E0_cryst + dE_ico + dE_split, theta = soft2*theta_cryst

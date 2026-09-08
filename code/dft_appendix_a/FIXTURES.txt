@@ -1,0 +1,29 @@
+WHAT THE DATA FILES IN THIS DIRECTORY ARE  (read before trusting any number here)
+=================================================================================
+
+  ev_test.dat            SYNTHETIC TEST FIXTURE. A synthetic energy vs volume curve
+                         centred on (V0 = 15.0 A^3/atom, E0 = -5.0 eV/atom), on a
+                         uniform 0.3 A^3 grid. Not a real E-V scan and not a density
+                         functional theory result. It exists only so fit_eos_debye.py
+                         can be exercised end to end without a DFT engine installed.
+
+  results_Cu8Zr5.json    REAL DFT RESULT, but NOT a drop-in dE_ico. A converged
+                         Quantum ESPRESSO relax of the free 13-atom Cu-centred
+                         Cu8Zr5 icosahedron in a 16 A vacuum box. It carries a
+                         "_status" key and a "_note" key saying so. Twelve of the
+                         thirteen atoms are surface, so E0 sits about +1.58 eV/atom
+                         (+152 kJ/mol) above the crystalline hull. That is a cluster
+                         surface energy, roughly 30 times the liquidus-calibrated
+                         amorphous offset (~52 meV/atom) and well past dE_ico.py's own
+                         +150 meV/atom sanity ceiling. DO NOT substitute it as dE_ico.
+                         V0, B0, Bp and thetaD are null: this was a relax only, with
+                         no volume scan, so no equation of state was fitted.
+
+The driving force needs the DENSE amorphous (bulk-like, no free surface) icosahedral
+offset, which comes from the glass SCF route (glass_static.py -> scf_glass.out ->
+dE_ico.py), not from this free cluster. The prediction in the manuscript therefore uses
+the liquidus calibration, not a first principles cluster energy; the DFT is reported as
+an upper bound and a structural check.
+
+To produce your own inputs, follow README.md (Order of work): relax the real structures,
+scan volumes, write your own ev_<name>.dat, run fit_eos_debye.py, then zentropy_handoff.py.

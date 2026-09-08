@@ -19,7 +19,7 @@ kB=1.380649e-23; Rg=8.314462; NA=6.02214076e23
 # ternary baseline
 TG,TL,DSTAR,XZR,LO,HI = 681,1163,20.6,0.38,"Cu8Zr3","Cu10Zr7"
 BASE=dict(aT=0.50, lam=2.8e-10, D=20.6, x_det=1e-6, eta0=4e-5, dE_split=6.0e3,
-          Bscale=1.0, Vmscale=1.0, soft1=0.85, soft2=0.80)
+          Bscale=1.0, Vmscale=1.0, soft1=0.80, soft2=0.80)
 _orig_G_liquid=z.G_liquid   # soft1/soft2 are G_liquid defaults, not threaded through
                             # make_dG_callable; monkeypatch so calibration+prediction see them
 

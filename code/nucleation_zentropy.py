@@ -24,7 +24,7 @@ def visc(T,Tg,D): T0=Cvft*Tg/(D+Cvft); return eta0*np.exp(D*T0/(T-T0))
 ALLOYS = {
  "Cu50Zr50":   dict(Tg=673,Tl=1208,D=13.6,x=0.50,bnd=("Cu10Zr7","CuZr"),aT=0.50,dc=2.0,anom=False,lab=r"Cu$_{50}$Zr$_{50}$"),
  "Cu47Zr45Al8":dict(Tg=681,Tl=1163,D=20.6,x=0.38,bnd=("Cu8Zr3","Cu10Zr7"),aT=0.50,dc=15.0,anom=False,lab=r"Cu$_{47}$Zr$_{45}$Al$_{8}$"),
- "Cu64Zr36":   dict(Tg=745,Tl=1230,D=13.6,x=0.36,bnd=("Cu8Zr3","Cu10Zr7"),aT=0.50,dc=2.0,anom=True,lab=r"Cu$_{64}$Zr$_{36}$"),  # uniform aT=0.50 (no per-alloy tuning); dc_pred 7.3 mm
+ "Cu64Zr36":   dict(Tg=745,Tl=1230,D=13.6,x=0.36,bnd=("Cu8Zr3","Cu10Zr7"),aT=0.50,dc=2.0,anom=True,lab=r"Cu$_{64}$Zr$_{36}$"),  # uniform aT=0.50 (no per-alloy tuning); dc_pred 10.9 mm
 }
 
 def build(a):

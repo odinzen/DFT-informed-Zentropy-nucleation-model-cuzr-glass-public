@@ -1,7 +1,6 @@
-The Odinzen engine — supplementary code and data
+Supplementary code and data for the engine
 =================================================
-Manuscript: A transparent, liquidus calibrated, Zentropy-style two configuration model for
-            glass forming ability: the Odinzen engine demonstrated on Cu Zr and Zr Cu Al alloys
+Manuscript: Glass-forming ability in Cu Zr and Zr Cu Al from a liquidus-calibrated Zentropy nucleation engine
 
 Contents
   zentropy_driving_force.py  Debye Grueneisen crystalline free energy from DFT bulk

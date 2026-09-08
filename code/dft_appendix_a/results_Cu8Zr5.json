@@ -1,0 +1,37 @@
+{
+  "name": "Cu8Zr5",
+  "_status": "REAL DFT RESULT (converged) - but surface-dominated; DO NOT substitute directly as dE_ico. See _note.",
+  "source": {
+    "engine": "Quantum ESPRESSO 7.3.1 (pw.x)",
+    "run": "relax, BFGS, converged in 16 ionic steps (bfgs converged)",
+    "settings": "ibrav=0, 16 A cubic box, ecutwfc=50 Ry, ecutrho=400 Ry, MP smearing degauss=0.01, Gamma point, forc_conv_thr=1.0d-3",
+    "pseudo": ["Cu.pbe-dn-kjpaw_psl.1.0.0.UPF", "Zr.pbe-spn-kjpaw_psl.1.0.0.UPF"],
+    "host": "ASU Sol (HPC cluster), run from tier1_cluster_upload/",
+    "date": "2026-07-12"
+  },
+  "nat": 13,
+  "composition": {"Cu": 8, "Zr": 5},
+  "E_total_Ry": -3239.48892963,
+  "E_total_eV": -44075.49185,
+  "E0_eV": -3390.42245,
+  "V0_A3": null,
+  "B0_GPa": null,
+  "Bp": null,
+  "thetaD_K": null,
+  "relaxed_coordinates_angstrom": [
+    ["Cu", 7.9179102323, 7.9728732525, 7.9932873758],
+    ["Cu", 5.9339678275, 8.0056671475, 6.7141405543],
+    ["Cu", 5.8503982722, 8.0125456416, 9.2581030769],
+    ["Cu", 6.6565776110, 5.9032467729, 7.9546100427],
+    ["Cu", 6.6275619988, 10.0750134383, 8.0424611240],
+    ["Cu", 7.9404237751, 6.6383891253, 5.9184828068],
+    ["Cu", 7.9593780150, 6.6784473111, 10.1128643237],
+    ["Cu", 7.9633564269, 9.2696895613, 5.9226287818],
+    ["Zr", 7.9148781277, 9.4877874847, 10.2747478365],
+    ["Zr", 9.3789011807, 5.6581516151, 7.9074466765],
+    ["Zr", 9.3602453574, 10.3711511224, 7.9899141620],
+    ["Zr", 10.2831443678, 7.9557502410, 6.4967870960],
+    ["Zr", 10.2132568075, 7.9712872862, 9.4145261429]
+  ],
+  "_note": "E0_eV is the per-atom energy of the FREE 13-atom Cu-centered icosahedron relaxed in vacuum. 12 of 13 atoms are surface, so E0 sits ~+1.58 eV/atom (+152 kJ/mol) above the crystalline hull (lever rule Cu8Zr3/Cu10Zr7). That is a cluster surface energy, ~30x the liquidus-calibrated amorphous offset (~52 meV/atom) and far beyond dE_ico.py's own +150 meV/atom sanity ceiling. The Zentropy driving force needs the DENSE amorphous (bulk-like, no free surface) icosahedral offset, which comes from the glass SCF route (glass_static.py -> scf_glass.out -> dE_ico.py), not this free cluster. thetaD not computed (relax only, no EOS scan); soft1 already set to 0.80 from the phonon VDOS."
+}

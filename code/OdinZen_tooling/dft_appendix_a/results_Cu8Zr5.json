@@ -1,9 +1,0 @@
-{
-  "_WARNING": "SYNTHETIC TEST FIXTURE, NOT A DFT RESULT. These values are a fit of the synthetic parabola ev_test.dat and exist only to exercise fit_eos_debye.py / zentropy_handoff.py end to end. E0_eV=-5 and V0_A3=15 are placeholders. Replace this file by running the Appendix A protocol (relax the real Cu8Zr5 cluster, scan volumes, refit) before using any number from it in a prediction.",
-  "name": "Cu8Zr5",
-  "E0_eV": -5.000000000000008,
-  "V0_A3": 14.99999999999991,
-  "B0_GPa": 96.13056000004877,
-  "Bp": 4.199999999994119,
-  "thetaD_K": 291.062146299897
-}

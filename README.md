@@ -13,7 +13,7 @@ are under CC BY 4.0, see `LICENSE-DATA`. Cite the paper if you use either.
 
 ## Contents
 
-- `code/OdinZen_tooling/` - the runnable package
+- `code/` - the runnable package
   - `zentropy_driving_force.py` - Debye-Grueneisen crystalline free energy, two-configuration
     Zentropy supercooled liquid, driving force calibrated to the measured liquidus
   - `nucleation_zentropy.py` - classical nucleation model; TTT nose, critical cooling rate,
@@ -28,13 +28,13 @@ are under CC BY 4.0, see `LICENSE-DATA`. Cite the paper if you use either.
 ## Requirements
 
 Python 3 with `numpy`, `scipy`, and `matplotlib`. No production DFT or molecular dynamics is
-needed at the point of prediction; `code/OdinZen_tooling/dft_appendix_a` documents how to
-compute the remaining first-principles input on your own machine.
+needed at the point of prediction; `code/dft_appendix_a` documents how to compute the
+remaining first-principles input on your own machine.
 
 ## Reproducing the figures
 
 ```
-cd code/OdinZen_tooling
+cd code
 python nucleation_zentropy.py
 python sensitivity.py
 ```
