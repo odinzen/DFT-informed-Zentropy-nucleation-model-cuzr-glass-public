@@ -75,3 +75,18 @@ needing DFT-accurate absolute energies (a Sol campaign); this EAM campaign does 
   6000/600 steps, 108-atom cells, n=5). matscipy C-accelerated EAM; ~3 h single-process.
 - `Cu-Zr_2.eam.fs` (Mendelev et al. 2009) is **licensed — do not redistribute**; it is gitignored
   and not committed. Obtain it separately to reproduce.
+
+## Reproducibility check — public package (2026-09-08)
+
+The public package (`code/config2/` in the public mirror) was fresh-cloned on a clean setup, with
+the licensed potential supplied separately per the README, and runs end to end on standard
+open-source packages (numpy, scipy, ase, matscipy); no kernel and no MLIP:
+
+- `smoke_test.py` passes and returns soft = 0.750 for the Cu50Zr50 glass, consistent with the
+  computed soft1/soft2 above.
+- `validate_engine.py` reproduces this file's validation table from the shipped
+  `config2_results.json`: Cu50Zr50 1.34 -> 3.10 mm and Cu64Zr36 10.86 -> 27.84 mm (declared vs
+  computed), against 2.0 mm measured.
+
+A code spot-check found the public copies of `config2_campaign.py`, `phonon_vdos.py`, and the
+engine byte-identical to the private versions; no fixes were needed.
