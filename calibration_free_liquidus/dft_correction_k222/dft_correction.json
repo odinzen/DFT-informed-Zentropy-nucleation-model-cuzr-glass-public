@@ -1,0 +1,37 @@
+{
+  "crystal_dE_eV_per_atom": {
+    "CuZr2": -3745.974585666152,
+    "Cu8Zr3": -3243.2501074657175,
+    "Cu10Zr7": -3420.692502584261
+  },
+  "cu50zr50": {
+    "frames": 39,
+    "liquid_dF_eV_per_atom": -3533.2072222022503,
+    "crystal_dE_eV_per_atom": -3533.2901467279926,
+    "dG_shift_kJ": 8.001000397191074,
+    "dG_shift_se_kJ": 0.06444043087244695,
+    "dU_spread_meV_per_atom": 4.170896793041678,
+    "liquidus_K": 1347.3805358359295,
+    "liquidus_boot_se_K": 10.479656217173831,
+    "variance_term_kJ": -0.8707111768165449,
+    "variance_term_first_kJ": -1.0092749945240034,
+    "variance_term_first_se_kJ": 0.304075764396295,
+    "zwanzig_minus_cumulant_kJ": 0.5091445277794264,
+    "more_frames": false
+  },
+  "cu64zr36": {
+    "frames": 39,
+    "liquid_dF_eV_per_atom": -3355.98378466013,
+    "crystal_dE_eV_per_atom": -3356.047356499407,
+    "dG_shift_kJ": 6.133750018521074,
+    "dG_shift_se_kJ": 0.07165357616049198,
+    "dU_spread_meV_per_atom": 4.637766491805817,
+    "liquidus_K": 1213.528503727967,
+    "liquidus_boot_se_K": 16.029650290095177,
+    "variance_term_kJ": -1.0572916731929216,
+    "variance_term_first_kJ": -0.6527742035144913,
+    "variance_term_first_se_kJ": 0.23146755678223174,
+    "zwanzig_minus_cumulant_kJ": 0.3611142410081811,
+    "more_frames": true
+  }
+}

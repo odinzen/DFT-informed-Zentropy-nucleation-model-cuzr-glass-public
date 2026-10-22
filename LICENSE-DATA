@@ -2,7 +2,8 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 Copyright (c) 2026 Odinzen LLC
 
-The figures in this repository (everything under figures/) are licensed under
+The figures (everything under figures/) and the data under calibration_free_liquidus/
+(results, inputs and outputs; its .py and .sh files are code, under LICENSE) are licensed under
 the Creative Commons Attribution 4.0 International License. You may share and
 adapt them for any purpose, including commercially, provided you give
 appropriate credit, link to the license, and indicate whether changes were made.

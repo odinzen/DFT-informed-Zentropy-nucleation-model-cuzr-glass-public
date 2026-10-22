@@ -8,8 +8,10 @@ classical nucleation model to return a TTT diagram, a critical cooling rate, and
 casting diameter.
 
 Odinzen LLC, in collaboration with Arizona State University. The code (everything under
-`code/`) is under the MIT License, see `LICENSE`; the figures (everything under `figures/`)
-are under CC BY 4.0, see `LICENSE-DATA`. Cite the paper if you use either.
+`code/`, and the `.py` and `.sh` files under `calibration_free_liquidus/`) is under the MIT
+License, see `LICENSE`; the figures (everything under `figures/`) and the data under
+`calibration_free_liquidus/` are under CC BY 4.0, see `LICENSE-DATA`. Cite the paper if you use
+any of them.
 
 ## Contents
 
@@ -26,6 +28,10 @@ are under CC BY 4.0, see `LICENSE-DATA`. Cite the paper if you use either.
     softening (soft2) and energy split from a classical-potential melt-quench and phonon
     density of states; the licensed EAM potential is not redistributed (see config2/README.md)
   - `MANIFEST.txt` - description of each file
+- `calibration_free_liquidus/` - Appendix B: the free energy of the liquid calculated with no
+  calibrated quantity, by thermodynamic integration with the MACE-MP-0 potential and a
+  correction to density functional theory; code, the 18 liquid runs, the Quantum ESPRESSO
+  inputs and outputs, and the analysis (see its README)
 - `figures/` - the figures and graphical abstract
 
 ## Requirements
