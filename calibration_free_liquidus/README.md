@@ -5,9 +5,9 @@ competing crystals calculated with no calibrated quantity, by thermodynamic inte
 MACE-MP-0 foundation potential and a free-energy-perturbation correction of both phases to density
 functional theory (PBE).
 
-| | Cu50Zr50, vs Cu10Zr7 + CuZr2 | Cu50Zr50, vs B2 CuZr | Cu64Zr36, vs Cu8Zr3 + Cu10Zr7 |
+| | Cu50Zr50, vs B2 CuZr | Cu50Zr50, vs Cu10Zr7 + CuZr2 | Cu64Zr36, vs Cu8Zr3 + Cu10Zr7 |
 |---|---|---|---|
-| Calculated liquidus (second-order cumulant) | 1227 +- 28 K | 1213 +- 43 K | 1169 +- 28 K |
+| Calculated liquidus (second-order cumulant) | 1213 +- 43 K | 1227 +- 28 K | 1169 +- 28 K |
 | Measured liquidus | 1208 K | 1208 K | 1230 K |
 
 ## Reproduce the numbers (numpy only)
@@ -16,11 +16,14 @@ functional theory (PBE).
 python assemble_liquid_dG.py                                   # MACE-MP-0 liquid vs harmonic crystals, writes ti_driver/results_local/liquid_dG.json
 python dft_correction_analysis.py dft_correction_k222 k222     # PBE correction of the liquid, writes dft_correction_k222/dft_correction.json
 python assemble_crystal_dG.py ti_driver/results_crystal crystal_dft   # Table B1, writes ti_driver/results_crystal/crystal_dG.json
+python kinetic_calc_driving_force.py                           # the calculated driving force carried through ../code (needs scipy)
 ```
 
 The first two steps are the earlier harmonic-crystal treatment; the third uses the switched
 crystals and their PBE frames together with the liquid correction from the second, and gives every
-entry of Table B1.
+entry of Table B1. The fourth runs the engine in `../code` with its liquidus calibration replaced by
+the calculated free-energy difference and prints the critical diameters quoted at the end of
+Appendix B; run it from a scratch directory.
 
 ## Contents
 
@@ -47,7 +50,8 @@ entry of Table B1.
 - `inputs/` - MACE-MP-0 crystal ground-state energies and harmonic vibrational free energies used
   by the harmonic treatment.
 - `structures/` - the four crystal unit cells; `glass/` - the six starting liquid cells.
-- `assemble_liquid_dG.py`, `dft_correction_analysis.py`, `assemble_crystal_dG.py` - the analysis.
+- `assemble_liquid_dG.py`, `dft_correction_analysis.py`, `assemble_crystal_dG.py`,
+  `kinetic_calc_driving_force.py` - the analysis.
 - `dft_queue.sh` - runs a list of pw.x jobs one after another on a workstation.
 
 ## Settings
