@@ -29,18 +29,19 @@ KB_eV = 8.617333262e-5
 
 
 class SpringCalculator(Calculator):
-    """Einstein springs to fixed reference sites: E = sum k/2 |r-r0|^2."""
+    """Einstein springs to fixed reference sites: E = sum k_i/2 |r_i-r0_i|^2 (k scalar or per atom)."""
     implemented_properties = ["energy", "forces"]
 
     def __init__(self, r0, k_eV_A2):
         super().__init__()
         self.r0 = np.asarray(r0, float)
-        self.k = float(k_eV_A2)
+        k = np.asarray(k_eV_A2, float)
+        self.k = float(k) if k.ndim == 0 else k[:, None]
 
     def calculate(self, atoms=None, properties=("energy",), system_changes=all_changes):
         super().calculate(atoms, properties, system_changes)
         d = atoms.get_positions() - self.r0
-        self.results["energy"] = 0.5 * self.k * np.sum(d * d)
+        self.results["energy"] = 0.5 * float(np.sum(self.k * d * d))
         self.results["forces"] = -self.k * d
 
 
@@ -76,10 +77,12 @@ def spring_constant_for_omega(mass_amu, omega_rad_s):
     return mass_amu * omega_rad_s ** 2 / OMEGA2_SI           # eV/Ang^2
 
 
-def _switch_leg(atoms, switch, T, n_steps, dt_fs, friction, forward=True, watch=None):
+def _switch_leg(atoms, switch, T, n_steps, dt_fs, friction, forward=True, watch=None, fixcm=False):
     """One lambda ramp; returns accumulated work sum_i dlam*(U_pot-U_spring) [eV].
-    `watch(dyn)`, if given, may attach its own observers to the dynamics."""
-    dyn = Langevin(atoms, dt_fs * units.fs, temperature_K=T, friction=friction, fixcm=False)
+    `watch(dyn)`, if given, may attach its own observers to the dynamics. fixcm keeps the centre of
+    mass still, which a crystal tethered to absolute sites needs (its reference carries the
+    matching centre-of-mass correction)."""
+    dyn = Langevin(atoms, dt_fs * units.fs, temperature_K=T, friction=friction, fixcm=fixcm)
     dlam = (1.0 if forward else -1.0) / n_steps   # backward integrates lambda 1->0 (dlam<0)
     work = 0.0
     state = {"i": 0}

@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: b2_128.data
+  reference_phase: solid
+  element: [Cu, Zr]
+  mass: [63.546, 91.224]
+  temperature: 900
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ['* * CuZr_mm.eam.fs Cu Zr']
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: lmp_mpi
+  mpi_executable: mpirun
+  folder_prefix: b2
+  queue:
+    scheduler: local
+    cores: 2

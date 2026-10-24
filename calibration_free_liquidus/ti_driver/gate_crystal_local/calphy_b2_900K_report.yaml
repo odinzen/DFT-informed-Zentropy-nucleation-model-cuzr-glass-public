@@ -1,0 +1,20 @@
+average:
+  density: 0.0565478101660166
+  spring_constant: 1.3686352828112929 1.9388999839826653
+  vol_atom: 17.683075107108152
+input:
+  concentration: 0.5 0.5
+  element: Cu Zr
+  lattice: b2_128.data
+  pressure: 0.0
+  temperature: 900
+results:
+  com_correction: -0.010200784182728193
+  dissipation: 0.000803390481452837
+  einstein_crystal: -0.48958808150128674
+  error: 0.0
+  free_energy: -5.418390552480955
+  pv: 0.0
+  reference_system: -0.4997888656840149
+  unit: eV/atom
+  work: -4.91860168679694
