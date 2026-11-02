@@ -24,9 +24,9 @@
   <text x="170" y="206" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f1f1f">Published DFT</text>
   <text x="170" y="230" text-anchor="middle" font-size="13" fill="#1f1f1f">B0, Hf  (Du et al.)</text>
 
-  <!-- chip: Declared model -->
+  <!-- chip: Calculated (phonon spectra, Appendix A) -->
   <rect x="36" y="276" width="268" height="80" rx="9" fill="#e8e8e8" stroke="#b3b3b3" stroke-width="1.2"/>
-  <text x="170" y="306" text-anchor="middle" font-size="14" font-weight="bold" fill="#2b2b2b">Declared model</text>
+  <text x="170" y="306" text-anchor="middle" font-size="14" font-weight="bold" fill="#2b2b2b">Calculated (Appendix A)</text>
   <text x="170" y="330" text-anchor="middle" font-size="13" fill="#2b2b2b">soft1, soft2, &#948;E</text>
 
   <!-- chip: Standard -->
@@ -59,10 +59,10 @@
   <text x="1044" y="230" text-anchor="middle" font-size="13" fill="#2b2b2b">&#8594; TTT diagram</text>
 
   <!-- Outputs -->
-  <text x="1044" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#2b2b2b">OUTPUTS</text>
-  <rect x="928" y="324" width="232" height="86" rx="9" fill="#e8e8e8" stroke="#7d7d7d" stroke-width="1.2"/>
-  <text x="1044" y="356" text-anchor="middle" font-size="13" fill="#1f1f1f">Rc,  critical cooling rate</text>
-  <text x="1044" y="380" text-anchor="middle" font-size="13" fill="#1f1f1f">dc,  critical diameter</text>
+  <rect x="928" y="324" width="232" height="96" rx="9" fill="#e8e8e8" stroke="#7d7d7d" stroke-width="1.2"/>
+  <text x="1044" y="352" text-anchor="middle" font-size="14" font-weight="bold" fill="#2b2b2b">OUTPUTS</text>
+  <text x="1044" y="378" text-anchor="middle" font-size="13" fill="#1f1f1f">Rc,  critical cooling rate</text>
+  <text x="1044" y="401" text-anchor="middle" font-size="13" fill="#1f1f1f">dc,  critical diameter</text>
 
   <!-- ===================== ARROWS ===================== -->
   <!-- inputs -> crystalline -->
@@ -84,7 +84,7 @@
   <line x1="1044" y1="120" x2="1044" y2="146" stroke="#6e6e6e" stroke-width="1.5" marker-end="url(#ahm)"/>
   <text x="1044" y="110" text-anchor="middle" font-size="12" font-style="italic" fill="#6e6e6e">D* &#8594; &#951;(T),   &#945;T &#8594; &#963;</text>
   <!-- nucleation -> outputs -->
-  <line x1="1044" y1="260" x2="1044" y2="320" stroke="#2b2b2b" stroke-width="1.8" marker-end="url(#ah)"/>
+  <line x1="1044" y1="260" x2="1044" y2="322" stroke="#2b2b2b" stroke-width="1.8" marker-end="url(#ah)"/>
 
   <!-- ===================== SENSITIVITY RIBBON ===================== -->
   <line x1="360" y1="512" x2="1160" y2="512" stroke="#a9a9a9" stroke-width="1"/>
