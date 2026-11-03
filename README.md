@@ -7,7 +7,7 @@ free energy for the supercooled liquid, and feeds the resulting driving force in
 classical nucleation model to return a TTT diagram, a critical cooling rate, and a critical
 casting diameter.
 
-Odinzen LLC, in collaboration with Arizona State University. The code (everything under
+The code (everything under
 `code/`, and the `.py` and `.sh` files under `calibration_free_liquidus/`) is under the MIT
 License, see `LICENSE`; the figures (everything under `figures/`) and the data under
 `calibration_free_liquidus/` are under CC BY 4.0, see `LICENSE-DATA`. Cite the paper if you use
