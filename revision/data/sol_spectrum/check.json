@@ -1,0 +1,13 @@
+{
+ "gpu": "NVIDIA A100-SXM4-80GB",
+ "float64": {
+  "max_force_difference_eV_A": 1.887379141862766e-15,
+  "energy_difference_eV_atom": 1.052655904829778e-15
+ },
+ "float32_cueq": {
+  "max_force_difference_eV_A": 4.20593352956633e-06,
+  "energy_difference_eV_atom": 2.9762908613722375e-06
+ },
+ "ms_per_step": 40.181087255477905,
+ "verdict": "PASS"
+}

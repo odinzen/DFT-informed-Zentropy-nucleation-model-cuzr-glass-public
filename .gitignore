@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+revision/figures_out/
+revision/tdb/
+revision/sol_spectrum_package/weights/
+code/figures/

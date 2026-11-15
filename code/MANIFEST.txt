@@ -1,16 +1,24 @@
-Supplementary code and data for the engine
-=================================================
-Manuscript: Glass-forming ability in Cu Zr and Zr Cu Al from a liquidus-calibrated Zentropy nucleation engine
+Supplementary code and data for Hyalos
+======================================
+Manuscript: Glass-forming ability in Cu-Zr and Zr-Cu-Al with Hyalos: liquidus-calibrated Zentropy
+nucleation kinetics
 
 Contents
   zentropy_driving_force.py  Debye Grueneisen crystalline free energy from DFT bulk
                              moduli; two configuration Zentropy supercooled liquid;
                              driving force calibrated to the liquidus.
-  nucleation_zentropy.py     Classical nucleation model; locates the TTT nose;
-                             critical cooling rate and casting diameter; figures.
+  hyalos_kinetics.py         Viscosity through two measured points per alloy, the Turnbull
+                             coefficient, and the classical nucleation model; every
+                             published diameter comes from here.
+  nucleation_zentropy.py     Locates the TTT nose; critical cooling rate and casting
+                             diameter; figures.
   sensitivity.py             Sensitivity of the prediction to each input (Fig S1).
+  hyalos_reality.py          Assessed crystal phases as separate nuclei, diffusion limited
+                             growth, and a liquid with a spectrum of configurations
+                             (Section S12). Needs pycalphad.
   dft_appendix_a/            Structures, VASP and Quantum ESPRESSO inputs, equation of
                              state and Debye fitter, and the Zentropy handoff script.
+  config2/                   The config-2 free-energy campaign (see its README).
 
 Requirements: python 3, numpy, scipy, matplotlib. No production DFT or molecular
 dynamics is needed at the point of prediction. The package in dft_appendix_a computes

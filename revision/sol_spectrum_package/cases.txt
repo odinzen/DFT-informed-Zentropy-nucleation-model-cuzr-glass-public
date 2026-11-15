@@ -1,0 +1,13 @@
+cu50zr50_a
+cu50zr50_b
+cu50zr50_c
+cu64zr36_a
+cu64zr36_b
+cu64zr36_c
+cu46zr54_a
+cu46zr54_b
+cu46zr54_c
+CuZr_B2
+Cu10Zr7
+CuZr2
+Cu8Zr3

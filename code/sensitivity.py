@@ -17,8 +17,10 @@ def box(ax):
 
 kB=1.380649e-23; Rg=8.314462; NA=6.02214076e23
 # ternary baseline
-TG,TL,DSTAR,XZR,LO,HI = 681,1163,20.6,0.38,"Cu8Zr3","Cu10Zr7"
-BASE=dict(aT=0.50, lam=2.8e-10, D=20.6, x_det=1e-6, eta0=4e-5, dE_split=6.0e3,
+import hyalos_kinetics as hk
+TG,TL,XZR,LO,HI = 681,1163,45/92,"Cu10Zr7","CuZr"
+B0,T00 = hk.vft_anchored(681,1112)
+BASE=dict(aT=hk.ALPHA_T, lam=hk.LAM, Bvft=B0, x_det=hk.X_DET, eta0=hk.ETA0, dE_split=6.0e3,
           Bscale=1.0, Vmscale=1.0, soft1=0.80, soft2=0.80)
 _orig_G_liquid=z.G_liquid   # soft1/soft2 are G_liquid defaults, not threaded through
                             # make_dG_callable; monkeypatch so calibration+prediction see them
@@ -33,10 +35,12 @@ def predict_dc(p):
         Vm=Vat*NA*p["Vmscale"]
         dSf=-(dG(TL+1)-dG(TL-1))/2.0; dHf=TL*dSf
         sig=p["aT"]*dHf/(NA**(1/3)*Vm**(2/3))
-        Nv=NA/Vm; Cvft=np.log(1e12/p["eta0"]); T0=Cvft*TG/(p["D"]+Cvft)
+        Nv=NA/Vm
+        # eta0 re-anchors B and T0; Bvft is varied at fixed T0
+        Ba,T0=hk.vft_anchored(681,1112,p["eta0"]); Bv=Ba if p["Bvft"]==B0 else p["Bvft"]
         T=np.linspace(TG+5,TL-3,1200); t=np.empty_like(T)
         for i,Ti in enumerate(T):
-            eta=p["eta0"]*np.exp(p["D"]*T0/(Ti-T0))
+            eta=p["eta0"]*np.exp(Bv/(Ti-T0))
             g=max(dG(Ti),1.0); gv=g/Vm
             dGs=16*np.pi*sig**3/(3*gv**2)
             I=Nv*(kB*Ti/(3*np.pi*p["lam"]**3*eta))*np.exp(-dGs/(kB*Ti))
@@ -50,7 +54,7 @@ def predict_dc(p):
 
 base_dc=predict_dc(BASE); print(f"baseline ternary dc = {base_dc:.2f} mm")
 LABELS={"aT":"Turnbull coefficient  $\\alpha_T$","lam":"jump distance  $\\lambda$",
-        "D":"fragility  $D^*$","x_det":"detectable fraction  $x$","eta0":"viscosity prefactor  $\\eta_0$",
+        "Bvft":"Vogel-Fulcher  $B$","x_det":"detectable fraction  $x$","eta0":"viscosity prefactor  $\\eta_0$",
         "dE_split":"configuration split  $\\delta E$","Bscale":"crystal bulk modulus  $B_0$","Vmscale":"molar volume  $V_m$",
         "soft1":"softening factor  soft$_1$","soft2":"softening factor  soft$_2$"}
 rows=[]

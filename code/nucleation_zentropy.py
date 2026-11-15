@@ -17,14 +17,16 @@ def box(ax):
     ax.tick_params(direction="out",length=4,width=1.0,colors="black"); ax.set_facecolor("white")
 
 kB=1.380649e-23; Rg=8.314462; NA=6.02214076e23
-eta0=4e-5; lam=2.8e-10; x_det=1e-6; Cvft=np.log(1e12/eta0)
-def visc(T,Tg,D): T0=Cvft*Tg/(D+Cvft); return eta0*np.exp(D*T0/(T-T0))
+import hyalos_kinetics as hk
+eta0=hk.ETA0; lam=hk.LAM; x_det=hk.X_DET
+def visc(T,a):
+    B,T0=hk.vft_anchored(a["Tg_eta"],a["Tstar"]); return eta0*np.exp(B/(T-T0))
 
-# alloy table: Tg, Tl, D*, xZr, (lo,hi crystal bounds), alphaT, dc_meas, anomaly
+# alloy table: Tg, Tl, viscosity anchors, xZr, (lo,hi crystal bounds), alphaT, dc_meas, anomaly
 ALLOYS = {
- "Cu50Zr50":   dict(Tg=673,Tl=1208,D=13.6,x=0.50,bnd=("Cu10Zr7","CuZr"),aT=0.50,dc=2.0,anom=False,lab=r"Cu$_{50}$Zr$_{50}$"),
- "Cu47Zr45Al8":dict(Tg=681,Tl=1163,D=20.6,x=0.38,bnd=("Cu8Zr3","Cu10Zr7"),aT=0.50,dc=15.0,anom=False,lab=r"Cu$_{47}$Zr$_{45}$Al$_{8}$"),
- "Cu64Zr36":   dict(Tg=745,Tl=1230,D=13.6,x=0.36,bnd=("Cu8Zr3","Cu10Zr7"),aT=0.50,dc=2.0,anom=True,lab=r"Cu$_{64}$Zr$_{36}$"),  # uniform aT=0.50 (no per-alloy tuning); dc_pred 10.9 mm
+ "Cu50Zr50":   dict(Tg=673,Tl=1208,Tg_eta=675,Tstar=1064,x=0.50,bnd=("Cu10Zr7","CuZr"),aT=hk.ALPHA_T,dc=2.0,anom=False,lab=r"Cu$_{50}$Zr$_{50}$"),
+ "Cu47Zr45Al8":dict(Tg=681,Tl=1163,Tg_eta=681,Tstar=1112,x=45/92,bnd=("Cu10Zr7","CuZr"),aT=hk.ALPHA_T,dc=15.0,anom=False,lab=r"Cu$_{47}$Zr$_{45}$Al$_{8}$"),
+ "Cu64Zr36":   dict(Tg=745,Tl=1230,Tg_eta=733,Tstar=1090,x=0.36,bnd=("Cu8Zr3","Cu10Zr7"),aT=hk.ALPHA_T,dc=2.0,anom=True,lab=r"Cu$_{64}$Zr$_{36}$"),
 }
 
 def build(a):
@@ -39,7 +41,7 @@ def ttt(a):
     dG,Vm,dHf,sig,dE,dSf = build(a)
     T=np.linspace(a["Tg"]+5,a["Tl"]-3,1400); t=np.empty_like(T)
     for i,Ti in enumerate(T):
-        e=visc(Ti,a["Tg"],a["D"]); g=max(dG(Ti),1.0); gv=g/Vm
+        e=visc(Ti,a); g=max(dG(Ti),1.0); gv=g/Vm
         dGs=16*np.pi*sig**3/(3*gv**2)
         I=(NA/Vm)*(kB*Ti/(3*np.pi*lam**3*e))*np.exp(-dGs/(kB*Ti))
         U=max((kB*Ti/(3*np.pi*lam**2*e))*(1-np.exp(-g/(Rg*Ti))),1e-30)
